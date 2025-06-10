@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You</title>
+  <style>
+    body {
+      margin: 0;
+      background: url('https://images.unsplash.com/photo-1508020431768-41fb2ecfa0bb?auto=format&fit=crop&w=1350&h=900') center/cover no-repeat;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 30px;
+      font-size: 2.5em;
+      animation: fadeIn 2s;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .letter {
+      margin: 40px auto;
+      width: 80%;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      padding: 30px;
+      font-size: 1.1em;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 3s;
+      text-align: left;
+    }
+    @keyframes fadeIn {
+      from {opacity:0;} to {opacity:1;}
+    }
+    @keyframes floatHearts {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+    .heart {
+      position: absolute;
+      width: 20px; height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 8s linear infinite;
+    }
+    .heart:before, .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px; height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart:before { top: -10px; left: 0; }
+    .heart:after  { left: -10px; top: 0; }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Your browser doesn’t support audio.
+  </audio>
+
+  <h1>For You ❤️</h1>
+
+  <div class="letter">
+    <p>
+hey u<br><br>
+we were bsf once idk maybe even more than that.<br>
+i liked u first, we've been tgh for two years now and i missed all those time we were spent time tgh in vc or in text now you are moving to new sch i wish we could be bsf again<br><br>
+sometimes we watched movies tgh i rmb we listened to playboi carti new album tgh<br>
+We talked a lot, texted a lot, laughed a lot.<br>
+but things are kinda different now<br>
+we still talk but not like before<br>
+and i miss that and i miss u<br>
+i miss the time we were in people's park<br>
+i was so scared but i still ride it because you wanted me to<br>
+i still remember all of our memories every little moment that made me feel love is real<br><br>
+cx dl kwr<br>
+lr m tarr nae ya  buuu
+    </p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 8000);
+    }
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
